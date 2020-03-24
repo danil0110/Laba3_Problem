@@ -9,6 +9,13 @@ namespace Laba3_Problem
         static void Main(string[] args)
         {
             string problem = "";
+            CommandLineInput(ref problem, args);
+            string[] result = Parse(problem);
+            SolveProblem(result);
+        }
+
+        public static void CommandLineInput(ref string problem, string[] args)
+        {
             if (args.Length > 0)
                 foreach (var el in args)
                 {
@@ -18,9 +25,6 @@ namespace Laba3_Problem
                             problem += symbol;
                     }
                 }
-
-            string[] result = Parse(problem);
-            SolveProblem(result);
         }
 
         public static string[] Parse(string problem)
