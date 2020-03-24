@@ -13,7 +13,11 @@ namespace Laba3_Problem
             string[] result = Parse(problem);
             SolveProblem(result);
         }
+        
+        // =========================== ФУНКЦИИ ===========================
 
+        // ============ ВВОД ЧЕРЕЗ АРГУМЕНТЫ КОМАНДНОЙ СТРОКИ ============
+        
         public static void CommandLineInput(ref string problem, string[] args)
         {
             if (args.Length > 0)
@@ -27,6 +31,8 @@ namespace Laba3_Problem
                 }
         }
 
+        // ============ ОТДЕЛЕНИЕ ЧИСЕЛ ОТ ЗНАКОВ ============
+        
         public static string[] Parse(string problem)
         {
             int pos1, pos2, i = 0;
@@ -64,6 +70,8 @@ namespace Laba3_Problem
             return result.ToArray();
         }
 
+        // ============ ПОДСЧЕТ ЗНАЧЕНИЯ ВЫРАЖЕНИЯ ============
+        
         public static void SolveProblem(string[] problem)
         {
             MyStack<float> numbers = new MyStack<float>();
@@ -116,6 +124,8 @@ namespace Laba3_Problem
             Console.WriteLine($"Result: {numbers.Pop()}");
         }
 
+        // ============ ВЫПОЛНЕНИЕ ДЕЙСТВИЯ НАД ДВУМЯ ЧИСЛАМИ ============
+        
         public static void Calculate(MyStack<float> numbers, MyStack<string> symbols)
         {
             float b = numbers.Pop();
