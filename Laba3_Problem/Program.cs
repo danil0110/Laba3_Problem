@@ -20,18 +20,25 @@ namespace Laba3_Problem
                 }
 
             string[] result = Parse(problem);
+            MyStack<int> numbers = new MyStack<int>();
+            MyStack<string> symbols = new MyStack<string>();
             foreach (var el in result)
             {
-                Console.WriteLine(el);
+                int number;
+                bool success = int.TryParse(el, out number);
+                if (success)
+                    numbers.Push(number);
+                else
+                    symbols.Push(el);
             }
-
+            
         }
 
         public static string[] Parse(string problem)
         {
             int pos1, pos2, i = 0;
             List<string> result = new List<string>();
-            problem += '+';
+            problem += '.';
             while (i < problem.Length)
             {
                 pos1 = i;
