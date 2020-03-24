@@ -8,7 +8,6 @@ namespace Laba3_Problem
     {
         static void Main(string[] args)
         {
-/*
             string problem = "";
             if (args.Length > 0)
                 foreach (var el in args)
@@ -19,9 +18,7 @@ namespace Laba3_Problem
                             problem += symbol;
                     }
                 }
-*/
 
-            string problem = "-23-2*9/4*2-11";
             string[] result = Parse(problem);
             SolveProblem(result);
         }
@@ -125,7 +122,7 @@ namespace Laba3_Problem
             {
                 case "+":
                     result = a + b;
-                break;
+                    break;
                 case "-": result = a - b;
                     break;
                 case "*": result = a * b;
